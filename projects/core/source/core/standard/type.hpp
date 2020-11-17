@@ -16,6 +16,7 @@ namespace universe::core {
 
     using real4 = float;
     using real8 = double;
+    using real10 = condition<(sizeof(long double) > sizeof(double)), long double, double>;
 
     #if defined(CORE_USE_DOUBLE)
     using real = double;
@@ -25,6 +26,7 @@ namespace universe::core {
 
     using size = decltype(sizeof(0));
     using byte = uint1;
+    using ptrdiff = decltype(static_cast<byte*>(0) - static_cast<byte*>(0));
 }
 
 #endif

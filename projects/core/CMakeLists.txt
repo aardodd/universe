@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.18)
 
-add_library(core STATIC
+add_library(core
     "source/core/container/array.cpp"
     "source/core/framework/observer.cpp"
     "source/core/framework/visitor.cpp"

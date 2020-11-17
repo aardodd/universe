@@ -208,9 +208,19 @@ namespace universe::core {
         return {_a.x + _b, _a.y + _b, _a.z + _b };
     }
 
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator+(const vector3<T>& _a, const U& _b) {
+        return {_a.x + static_cast<T>(_b), _a.y + static_cast<T>(_b), _a.z + static_cast<T>(_b) };
+    }
+
     template<typename T>
     constexpr inline vector3<T> operator-(const vector3<T>& _a, const T& _b) {
         return {_a.x - _b, _a.y - _b, _a.z - _b };
+    }
+
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator-(const vector3<T>& _a, const U& _b) {
+        return {_a.x - static_cast<T>(_b), _a.y - static_cast<T>(_b), _a.z - static_cast<T>(_b) };
     }
 
     template<typename T>
@@ -218,13 +228,28 @@ namespace universe::core {
         return {_a.x * _b, _a.y * _b, _a.z * _b };
     }
 
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator*(const vector3<T>& _a, const U& _b) {
+        return {_a.x / static_cast<T>(_b), _a.y / static_cast<T>(_b), _a.z / static_cast<T>(_b) };
+    }
+
     template<typename T>
     constexpr inline vector3<T> operator/(const vector3<T>& _a, const T& _b) {
         return {_a.x / _b, _a.y / _b, _a.z / _b };
     }
 
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator/(const vector3<T>& _a, const U& _b) {
+        return {_a.x / static_cast<T>(_b), _a.y / static_cast<T>(_b), _a.z / static_cast<T>(_b) };
+    }
+
     template<typename T>
     constexpr inline vector3<T> operator+(const T& _a, const vector3<T>& _b) {
+        return _b + _a;
+    }
+
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator+(const U& _a, const vector3<T>& _b) {
         return _b + _a;
     }
 
@@ -233,13 +258,28 @@ namespace universe::core {
         return _b - _a;
     }
 
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator-(const U& _a, const vector3<T>& _b) {
+        return _b - _a;
+    }
+
     template<typename T>
     constexpr inline vector3<T> operator*(const T& _a, const vector3<T>& _b) {
         return _b * _a;
     }
 
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator*(const U& _a, const vector3<T>& _b) {
+        return _b * _a;
+    }
+
     template<typename T>
     constexpr inline vector3<T> operator/(const T& _a, const vector3<T>& _b) {
+        return _b / _a;
+    }
+
+    template<typename T, typename U>
+    constexpr inline vector3<T> operator/(const U& _a, const vector3<T>& _b) {
         return _b / _a;
     }
 }

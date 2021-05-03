@@ -1,5 +1,5 @@
 #if !defined(INCLUDED_CORE_TRAIT_IS_BOOL)
-#define INCLUDED_CORE_TRAIT_IS_INTEGRAL
+#define INCLUDED_CORE_TRAIT_IS_BOOL
 
 #include <core/trait/is_same.hpp>
 
